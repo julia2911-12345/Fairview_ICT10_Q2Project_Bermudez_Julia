@@ -1,0 +1,102 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Sets the character encoding and page dimensions -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Sets the browser tab title -->
+    <title>Dance Club | Element Checker</title>
+
+    <!-- Connects the shared website design -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Loads the PyScript styling and JavaScript files -->
+    <link rel="stylesheet"
+    href="https://pyscript.net/releases/2026.7.3/core.css">
+
+    <script type="module"
+    src="https://pyscript.net/releases/2026.7.3/core.js"></script>
+
+</head>
+
+<body>
+
+    <!-- NAVIGATION BAR: Contains the website logo and page links -->
+
+    <nav>
+        <div class="logo">DANCE CLUB.</div>
+
+        <div class="nav-links">
+            <!-- Links to the different website pages -->
+            <a href="index.html">HOME</a>
+            <a href="elements.html">ELEMENT CHECKER</a>
+            <a href="members.html">MEMBERS</a>
+            <a href="creators.html">CREATOR</a>
+        </div>
+    </nav>
+
+
+    <!-- ELEMENT CHECKER: Contains the input and search button -->
+
+    <div class="container">
+
+        <h1>Non-Metal Finder</h1>
+
+        <!-- Displays instructions that users can open and close -->
+        <details>
+            <summary>Show Instructions</summary>
+
+            <p>
+                Enter a non-metal element symbol to reveal
+                its element name, atomic number, and atomic mass.
+            </p>
+        </details>
+
+        <!-- Label identifies the chemical symbol input field -->
+        <label for="Symbol">Chemical Symbol:</label>
+
+        <!-- Input field where users enter an element symbol -->
+        <input
+            type="text"
+            id="Symbol"
+            name="Symbol"
+            placeholder="Example: H, O, C, Ne"
+            maxlength="2">
+
+        <!-- Calls the Python function when clicked -->
+        <button
+            type="button"
+            py-click="find_nonmetal">
+
+            FIND NON-METAL
+
+        </button>
+
+    </div>
+
+
+    <!-- RESULTS: Displays the properties of the searched element -->
+
+    <div class="container result" id="show">
+
+        Enter an element symbol to see its properties.
+
+    </div>
+
+
+    <!-- FOOTER: Displays the website copyright -->
+
+    <footer>
+        <p>© 2026 DANCE CLUB. ALL RIGHTS RESERVED.</p>
+    </footer>
+
+
+    <!-- PYTHON CONNECTION: Connects the HTML page to elements.py -->
+
+    <script type="py" src="elements.py"></script>
+
+</body>
+</html>

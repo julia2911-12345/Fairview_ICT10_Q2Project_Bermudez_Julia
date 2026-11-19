@@ -1,0 +1,354 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dance Club | Home</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet"
+    href="https://pyscript.net/releases/2026.7.3/core.css">
+
+    <script type="module"
+    src="https://pyscript.net/releases/2026.7.3/core.js"></script>
+
+    <style>
+
+        /* Applies border box sizing to all elements for easier layout. */
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Sts the general font, text color, and background appearance of the webpage. */
+        body {
+            font-family: Arial, sans-serif;
+            color: white;
+
+            /* Adds a dark transparent overlay on top of the background GIF to improve text visibility. */
+             background:
+                linear-gradient(
+                    rgba(8, 14, 20, 0.48),
+                    rgba(8, 14, 20, 0.65)
+                ),
+                url('Dance2.gif');
+
+            /* Adjusts the background image to cover the available area and remain centered. */
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            background-repeat: no-repeat;
+        }
+
+        /* NAVIGATION BAR */
+
+        /* Uses flexbox to arrange the logo and navigation links on the opposite sides. */
+        nav {
+            padding: 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Styles the Dance Club logo (or.. text?) by adjusting its size, weight, and letter spacing. */
+        .logo {
+            font-size: 23px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        /* Arranges the navigation links horizontally with equal spacing between them. */
+        .nav-links {
+            display: flex;
+            gap: 32px;
+        }
+
+        /* sets the color and size of navigation links. */
+        .nav-links a {
+            color: white;
+            font-size: 13px;
+        }
+
+        /* MAIN INTRODUCTION PARTT */
+
+        /* Uses flexbox to position the main heading and sub heading vertically. */
+        .hero {
+            min-height: 430px;
+            padding: 145px 8% 35px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        /* Adjusts the heading's size and spacing. Clamp sets a value that adjusts and is bounded between a minimum and maximum size.*/
+        .hero h1 {
+            font-size: clamp(45px, 7vw, 85px);
+            line-height: 0.95;
+            max-width: 650px;
+            letter-spacing: -3px;
+            font-weight: 800;
+        }
+
+        /* Styles the small text underr the main heading. */
+        .hero-subtitle {
+            font-size: 17px;
+            margin-top: 20px;
+        }
+
+        /* SMALL EDITORIAL TEXT */
+
+        /* Places the two descriptive text blocks on opposite sides of the webpage. */
+        .details {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            padding: 0 8%;
+            gap: 40px;
+            margin-top: -5px;
+        }
+
+        /* Controls the font size, line spacing, color, and width of the descriptions. */
+        .details p {
+            font-size: 14px;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 190px;
+        }
+
+        /* Aligns the second descriptive text block to the right. */
+        .details .right-text {
+            text-align: right;
+        }
+
+        /* DIVIDING LINE */
+
+        /* Creates a horizontal line to like visually separate the introduction from the membership checker. */
+        .divider {
+            width: 84%;
+            height: 1px;
+            margin: 30px auto;
+            background: rgba(255, 255, 255, 0.4);
+        }
+
+        /* MEMBERSHIP CHECKER */
+
+        /* Creates the main container for the membership checker and centers it on the webpage. */
+        .container {
+            width: 90%;
+            margin: 35px auto 70px;
+            padding: 30px;
+            text-align: center;
+
+            /* Adds a transparent background and border to show the difference of the checker from the background. */
+            background: rgba(12, 20, 28, 0.48);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+
+            /* Applies a blur effect behind the container for a glassy looking appearance, just for visual appeal! */
+            backdrop-filter: blur(12px);
+        }
+
+        /* Styles the heading of the membership checker. */
+        .container h2 {
+            font-size: 25px;
+            margin-bottom: 10px;
+        }
+
+        /* Styles the instructions above the input fields. */
+        .container p {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 25px;
+        }
+
+        /* Styles the textboxs where users enter their first and last names. */
+        input {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 14px;
+            border-bottom: 2px solid rgba(255, 255, 255, 0.6);
+            background: rgba(255, 255, 255, 0.92);
+            color: #17212a;
+            font-size: 14px;
+        }
+
+        /* Styles the button that activates the Python membership-checking function. */
+        button {
+            width: 100%;
+            padding: 15px;
+            margin-top: 5px;
+            border: 1px solid white;
+            background: transparent;
+            color: white;
+            font-size: 13px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        /* Changes the button's colors when the user moves the cursor over it. */
+        button:hover {
+            background: white;
+            color: #17212a;
+        }
+
+        /* Styles the area where the Python function displays the membership result. */
+        .result {
+            margin-top: 22px;
+            padding: 13px;
+            font-size: 14px;
+            line-height: 1.6;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* FOOTER */
+
+        /* Centers and styles the copyright information at the bottom of the webpage. */
+        footer {
+            text-align: center;
+            padding: 20px;
+            font-size: 10px;
+            letter-spacing: 1px;
+            color: rgba(255, 255, 255, 0.65);
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- NAVIGATION BAR -->
+
+    <!-- Contains the website logo and links to the other project webpages. -->
+    <nav>
+
+        <div class="logo">DANCE CLUB.</div>
+
+        <div class="nav-links">
+            <a href="index.html">HOME</a>
+            <a href="elements.html">ELEMENT CHECKER</a>
+            <a href="members.html">MEMBERS</a>
+            <a href="creators.html">CREATOR</a>
+        </div>
+
+    </nav>
+
+
+    <!-- HERO SECTION -->
+
+    <header class="hero">
+
+        <h1>
+            MOVE WITH<br>
+            THE BEAT.
+        </h1>
+
+        <p class="hero-subtitle">
+            We speak the language of dance.
+        </p>
+
+    </header>
+
+
+    <!-- EDITORIAL DESCRIPTION -->
+
+    <!-- Provides additional information about the Dance Club and its purpose. -->
+    <section class="details">
+
+        <p>
+            Dance is more than movement.
+            It is expression, creativity, and
+            the freedom to tell stories without words.
+        </p>
+
+        <p class="right-text">
+            Welcome to our Dance Club.
+            A place where passion meets movement,
+            friendships grow, and every beat
+            brings us together.
+        </p>
+
+    </section>
+
+
+    <!-- Separates the introduction section from the membership checker. -->
+    <div class="divider"></div>
+
+
+    <!-- SEATWORK 1: CLUB MEMBER CHECKER -->
+
+    <!-- Contains the input fields, button, and result area for checking club membership. -->
+    <div class="container" id="checker">
+
+        <h2>Dance Club Checker</h2>
+
+        <p>
+            Are you part of the movement?
+            Enter your name to check your membership.
+        </p>
+
+        <!-- Collects the first name entered by the user. -->
+        <input
+            type="text"
+            id="first_name"
+            placeholder="Example: Anthony Edward">
+
+        <!-- Collects the last name entered by the user. -->
+        <input
+            type="text"
+            id="last_name"
+            placeholder="Example: Stark">
+
+        <!-- Calls the check_candidate Python function when the button is clicked. -->
+        <button py-click="check_candidate">
+            CHECK MEMBERSHIP
+        </button>
+
+        <!-- Displays the membership verification message returned by Python. -->
+        <div id="result" class="result">
+            Your membership result will appear here.
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+
+    <!-- Displays the website's copyright information. -->
+    <footer>
+        © 2026 DANCE CLUB. ALL RIGHTS RESERVED.
+    </footer>
+
+
+    <!-- PYTHON CONNECTION -->
+
+    <!-- Connects this HTML webpage to main.py, which contains the membership-checking function. -->
+    <script type="py" src="main.py"></script>
+    
+    <!-- References: 
+Refsnes Data. (n.d.). CSS flexbox. W3Schools. https://www.w3schools.com/css/css3_flexbox.asp
+
+Refsnes Data. (n.d.). CSS rounded corners. W3Schools. https://www.w3schools.com/css/css3_borders.asp
+
+Refsnes Data. (n.d.). CSS clamp() function. W3Schools. https://www.w3schools.com/CSSref/func_clamp.php
+
+Refsnes Data. (n.d.). HTML images. W3Schools. https://www.w3schools.com/html/html_images.asp
+
+Refsnes Data. (n.d.). Python functions. W3Schools. https://www.w3schools.com/python/python_functions.asp
+
+Refsnes Data. (n.d.). CSS overflow-wrap property. W3Schools. https://www.w3schools.com/cssref/css3_pr_overflow-wrap.php
+
+Refsnes Data. (n.d.). HTML and CSS responsive design. W3Schools. https://www.w3schools.com/htmlcss/htmlcss_responsive_design.asp
+
+Fantasie landschap | Fotografie, Film. (n.d.). Pinterest. https://ph.pinterest.com/pin/547680004698797897/
+       
+     -->
+
+</body>
+</html>
+

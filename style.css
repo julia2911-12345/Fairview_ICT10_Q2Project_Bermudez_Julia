@@ -1,0 +1,184 @@
+
+/* GENERAL WEBSITE STYLINGSS */
+
+/* Applies the same sizing rules to all elements */
+* {
+    box-sizing: border-box;
+}
+
+/* Sets the background, font, and text color for the website */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: white;
+
+/* Adds the same GIF background to every page */
+/* Adds a dark transparent overlay on top of the background GIF to improve text visibility. */
+    background:
+        linear-gradient(
+            rgba(8, 14, 20, 0.48),
+            rgba(8, 14, 20, 0.65)
+            ),
+            url('Dance2.gif');
+
+/* Adjusts the background image to cover the available area and remain centered. */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+
+/* NAVIGATION BAR */
+
+/* Arranges the logo and links in one row */
+nav {
+    width: 100%;
+    padding: 18px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Styles the website logo */
+nav .logo {
+    font-size: 22px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+
+/* Arranges the navigation links */
+nav .nav-links {
+    display: flex;
+    gap: 25px;
+}
+
+/* Styles the navigation links */
+nav a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+}
+
+/* hover effect to the links */
+nav a:hover {
+    opacity: 0.7;
+}
+
+
+/* PAGE INTRO */
+
+/* Centers the page heading and description */
+header {
+    text-align: center;
+    padding: 40px 15px;
+}
+
+/* Styles the main page heading */
+h1 {
+    font-size: 38px;
+    letter-spacing: 2px;
+}
+
+/* Styles the smaller headings */
+h1, h2, h3 {
+    text-align: center;
+}
+
+
+/* MAIN STUFF */
+
+/* Creates the main content boxes */
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 30px;
+    border-radius: 15px;
+
+    /* Makes the container a bit transparent */
+    background: rgba(0, 0, 0, 0.45);
+}
+
+
+/* FORMS */
+
+/* Styles the text input fields */
+input {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    margin: 12px 0;
+    border-radius: 5px;
+}
+
+/* Styles the buttons */
+button {
+    padding: 12px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+}
+
+/* Changes the button appearance when hovered */
+button:hover {
+    opacity: 0.8;
+}
+
+
+/* RESULTS */
+
+/* Styles the area where results are displayed */
+.result {
+    margin-top: 25px;
+    padding: 20px;
+    border-radius: 10px;
+    overflow-wrap: anywhere;
+    line-height: 1.8;
+}
+
+
+/* DETAILS AND INSTRUCTIONS */
+
+/* Adds spacing to the instructions section */
+details {
+    margin: 20px 0;
+}
+
+/* Changes the cursor when hovering over instructions */
+summary {
+    cursor: pointer;
+}
+
+
+/* CREATOR PAGE */
+
+/* Adds spacing between the creator information sections */
+.container p {
+    line-height: 1.8;
+}
+
+
+/* FOOTER */
+
+/* Centers the copyright text at the bottom */
+footer {
+    text-align: center;
+    padding: 25px;
+    font-size: 13px;
+}
+/* CREATOR PROFILE PIC */
+
+/* Centers the creator's picture */
+.creator-image {
+    text-align: center;
+    margin: 20px;
+}
+
+/* Sets the size and appearance of the picture */
+.creator-image img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid white;
+}
